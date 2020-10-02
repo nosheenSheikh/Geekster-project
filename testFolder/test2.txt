@@ -1,0 +1,1 @@
+test file in a folder for playing with git.
