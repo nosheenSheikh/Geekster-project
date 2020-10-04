@@ -1,18 +1,20 @@
+package JavaClass3;
+
 import java.util.Scanner;
 
-public class RemainderWithThree {
+public class PrintNoOfDigits {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
-		if(num%3==0) {
-			System.out.println("zero");
-		}else if(num%3==1) {
-			System.out.println("one");
-		}else {
-			System.out.println("two");
+		int count=0;
+		while(num !=0) {
+			int temp = num;
+			num = num/10;
+			count++;
 		}
+		System.out.println(count);
 	}
 
 }

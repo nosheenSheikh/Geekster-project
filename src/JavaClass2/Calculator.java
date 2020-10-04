@@ -1,3 +1,6 @@
+package JavaClass2;
+
+//date : 4 October 10-12
 
 public class Calculator {
 

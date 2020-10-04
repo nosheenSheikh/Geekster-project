@@ -1,5 +1,6 @@
-package Class3;
+package JavaClass3;
 
+// date: 3rd October 14-16
 import java.util.Scanner;
 
 public class MaxOf3 {

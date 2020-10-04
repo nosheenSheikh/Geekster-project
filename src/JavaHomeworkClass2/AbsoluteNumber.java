@@ -1,5 +1,6 @@
-package HomeworkClass2;
+package JavaHomeworkClass2;
 import java.lang.Math;
+// date:3rd October
 import java.util.Scanner;
 public class AbsoluteNumber {
 

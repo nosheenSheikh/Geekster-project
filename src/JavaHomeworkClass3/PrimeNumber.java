@@ -1,7 +1,7 @@
-package Class3;
+package JavaHomeworkClass3;
 
 import java.util.Scanner;
-
+//date:3rd October
 public class PrimeNumber {
 
 	public static void main(String[] args) {

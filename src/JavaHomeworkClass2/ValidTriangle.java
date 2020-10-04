@@ -1,6 +1,7 @@
-package HomeworkClass2;
+package JavaHomeworkClass2;
 
 import java.util.Scanner;
+//date:3rd October
 
 public class ValidTriangle {
 
