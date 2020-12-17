@@ -19,7 +19,7 @@ public class SearchInRotatedSortedArray {
                 return index;
             }
         }
-        
+
         //for finding the pivot and set flag = 1 when you get the pivot
         for(int i=0;i<nums.length-1;i++){
             if(nums[i] > nums[i+1]){
@@ -32,8 +32,8 @@ public class SearchInRotatedSortedArray {
                 break;
             }
         }
-        
-     // if pivot found i.e. array is rotated   
+
+     // if pivot found i.e. array is rotated
      if(flag == 1){
     	 System.out.println("flag is 1");
     	 System.out.println("low: "+low);
@@ -42,14 +42,14 @@ public class SearchInRotatedSortedArray {
     	 System.out.println("nums[low]:"+ nums[low]);
     	 System.out.println("pivot1: "+pivot1);
     	 if(target >= nums[pivot2] && target <= nums[high]){
-            low = pivot2;   
+            low = pivot2;
             System.out.println("low became: "+low);
          }else if(target <= nums[pivot1] && target >= nums[low]){
         	 System.out.println("high became: "+high);
             high = pivot1;
      }
      }
-     
+
         // iterate in the range where target is and find the index
         while(low<=high){
         	System.out.println("enters while");
@@ -66,7 +66,7 @@ public class SearchInRotatedSortedArray {
         }
         return index;
 	}
-	
+
 	public static void printDecreasing(int num) {
 		if(num==0) {
 			return;
@@ -74,7 +74,7 @@ public class SearchInRotatedSortedArray {
 		System.out.println(num);
 		printDecreasing(num-1);
 	}
-	
+
 	public static void HiOddDecByeEvenInc(int num) {
 		if(num==0) {
 			return;
@@ -95,12 +95,12 @@ public class SearchInRotatedSortedArray {
 		int fact1 = fact*num;
 		return fact1;
 	}
-	
+
 	public static int printPower(int num,int p) {
 		if(p ==0) {
 			return 1;
 		}
-		
+
 		if(p==1) {
 			return num;
 		}
@@ -111,7 +111,7 @@ public class SearchInRotatedSortedArray {
 			return pow*pow*2;
 		}
 		}
-	
+
 	public static int printFibonacci(int num) {
 		if(num ==1) {
 			return 0;
@@ -125,7 +125,7 @@ public class SearchInRotatedSortedArray {
 		System.out.println(currFib);
 		return currFib;
 	}
-	
+
 	public static void printArray(int[] arr,int n) {
 		if(n<0) {
 			return arr[]
@@ -134,7 +134,7 @@ public class SearchInRotatedSortedArray {
 		printArray(arr,n-1);
 //		System.out.print(arr[n] + " ");
 	}
-	
+
 	public static int printMaxArray(int[] arr, int n) {
 		if(n<0) {
 			return
@@ -146,7 +146,7 @@ public class SearchInRotatedSortedArray {
 			return arr[n-1];
 		}
 	}
-	
+
 	public static int find(int[] arr, int vidx, int target) {
 		if(vidx == arr.length-1 && arr[arr.length-1] != target) {
 			return -1;
@@ -156,7 +156,7 @@ public class SearchInRotatedSortedArray {
 		}
 		return find(arr,vidx+1, target);
 	}
-	
+
 	public static int findFirst(int[] arr, int vidx, int target) {
 		if(vidx == arr.length-1 && arr[arr.length-1] != target) {
 			return -1;
@@ -166,7 +166,7 @@ public class SearchInRotatedSortedArray {
 		}
 		return find(arr,vidx+1, target);
 	}
-	
+
 	public static int findLast(int[] arr, int vidx, int target) {
 		if(vidx == arr.length) {
 			return -1;
@@ -229,8 +229,8 @@ public class SearchInRotatedSortedArray {
 		for(int i=0;i<arr.length;i++) {
 			System.out.println(result[i]);
 		}
-		
+
     }
 	}
 
- 
+
