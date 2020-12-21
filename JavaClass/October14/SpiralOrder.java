@@ -22,7 +22,7 @@ public class SpiralOrder {
 		for(int i=0;i<arr.length;i++) {
 			if(left == false) {
 				
-				System.out.println(arr[i][j]);
+//				System.out.println(arr[i][j]);
 			}
 		}
 	}

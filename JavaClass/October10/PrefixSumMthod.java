@@ -8,7 +8,7 @@ public class PrefixSumMthod {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		int arr
+//		int arr
 	}
 
 }

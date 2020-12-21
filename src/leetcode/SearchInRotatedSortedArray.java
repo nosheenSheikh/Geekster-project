@@ -128,7 +128,7 @@ public class SearchInRotatedSortedArray {
 
 	public static void printArray(int[] arr,int n) {
 		if(n<0) {
-			return arr[]
+//			return arr[];
 		}
 		System.out.print(arr[n] + " ");
 		printArray(arr,n-1);
@@ -137,7 +137,7 @@ public class SearchInRotatedSortedArray {
 
 	public static int printMaxArray(int[] arr, int n) {
 		if(n<0) {
-			return
+//			return;
 		}
 		int max = printMaxArray(arr, n-1);
 		if(max > arr[n-1]) {

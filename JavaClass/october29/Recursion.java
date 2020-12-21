@@ -23,4 +23,7 @@ public class Recursion {
 		possibleRupeeCount(10,deno,0);
 	}
 
+	private static void possibleRupeeCount(int i, int[] deno, int i1) {
+	}
+
 }
