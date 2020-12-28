@@ -175,5 +175,140 @@ public class Graph {
     return -1;
   }
 
+//  public void roadMapToStudy() {
+//    HashSet<String> viisted = new HashSet<>();
+//    Stack<String> sorted = new Stack<>();
+//
+//    for()
+//  }
+
+//  public boolean isBipartite(){}
+  private boolean isBipartite(String s, HashMap<String, Integer> visited) {
+    LinkedList<String> curr = new LinkedList<>();
+    LinkedList<String> next = new LinkedList<>();
+
+    curr.addLast(s);
+    int level = 1;
+    while(curr.size() > 0){
+      String v = curr.removeFirst();
+      if (visited.containsKey(v) == true) {
+        int oddLevel = visited.get(v);
+        if (oddLevel % 2 != level %2){
+          return false;
+        }
+      }
+
+      visited.put(v, level);
+      for (String neighbour: graph.get(v).keySet()) {
+        if (visited.containsKey(neighbour) == false){
+          next.addLast(neighbour);
+        }
+      }
+
+      if(curr.size() == 0){
+        curr = next;
+        next = new LinkedList<String>();
+        level++;
+      }
+    }
+    return true;
+  }
+
+  public ArrayList<String> getConnectedComponenets(String s) {
+    HashSet<String> visited = new HashSet<>();
+    ArrayList<String> paths = new ArrayList<>();
+
+    for(String vertex : graph.keySet()){
+      LinkedList<String> q = new LinkedList<>();
+      q.addLast(vertex);
+      String str = "";
+      while (q.size() > 0){
+        String v = q.removeFirst();
+        if(visited.contains(v) == true){
+          continue;
+        }
+
+        visited.add(v);
+        str +=v;
+        for(String neighbour: graph.get(v).keySet()){
+          if (visited.contains(neighbour) == false){
+            q.addLast(neighbour);
+          }
+        }
+        paths.add(str);
+      }
+    }
+    return paths;
+  }
+
+  public boolean isConnected(String s) {
+    HashSet<String> visited = new HashSet<>();
+    ArrayList<String> paths = new ArrayList<>();
+
+    for(String vertex : graph.keySet()){
+      LinkedList<String> q = new LinkedList<>();
+      q.addLast(vertex);
+      String str = "";
+      while (q.size() > 0){
+        String v = q.removeFirst();
+        if(visited.contains(v) == true){
+          continue;
+        }
+
+        visited.add(v);
+        str +=v;
+        for(String neighbour: graph.get(v).keySet()){
+          if (visited.contains(neighbour) == false){
+            q.addLast(neighbour);
+          }
+        }
+        if(paths.size() >1){
+          return false;
+        }else{
+          paths.add(str);
+        }
+      }
+    }
+    return true;
+  }
+
+  public void hamiltonianPaths(String s){
+    hamiltonianPaths(s, new HashSet<>(), s, s);
+  }
+
+  private  void hamiltonianPaths(String s, HashSet visited, String s1, String psf) {
+    visited.add(s);
+    if (visited.size() == graph.size()){
+      System.out.println(psf);
+    }
+
+    for (String neighbour: graph.get(s).keySet()){
+      if (visited.contains(neighbour) == false) {
+        hamiltonianPaths(neighbour, visited, s, psf + neighbour);
+      }
+    }
+  }
+
+  public void hamiltonianCycle(String s){
+    hamiltonianPaths(s, new HashSet<>(), s, s);
+  }
+
+  private  void hamiltonianCycle(String s, HashSet<String> visited, String psf, String oSource) {
+    visited.add(s);
+    if (visited.size() == graph.size()){
+      if(graph.get(oSource).containsKey(s)){
+        System.out.println(psf+oSource);
+      }
+      System.out.println(psf);
+    }
+
+    for (String neighbour: graph.get(s).keySet()){
+
+      if (visited.contains(neighbour) == false) {
+        hamiltonianPaths(neighbour, visited, s, psf + neighbour);
+      }
+    }
+  }
+
 
 }
